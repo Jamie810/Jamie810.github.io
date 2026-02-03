@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Homepage - Showcasing my skills, projects and experiences">
+    <title>Personal Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">My Homepage</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#prizes" class="nav-link">Prizes</a></li>
+                <li><a href="#papers" class="nav-link">Publications</a></li>
+                <li><a href="#internships" class="nav-link">Internships</a></li>
+                <li><a href="#entrepreneurship" class="nav-link">Entrepreneurship</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页部分 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title"><span id="greeting">Hello</span>, I'm <span class="highlight">Jamie SU</span></h1>
+                <p class="hero-subtitle">A bold explorer with wide-ranging interests</p>
+                <div class="hero-contact">
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:ysu272@connect.hkust-gz.edu.cn">ysu272@connect.hkust-gz.edu.cn</a>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Guangzhou, Guangdong, China</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="mailto:ysu272@connect.hkust-gz.edu.cn" class="btn btn-secondary">Email Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar">
+                    <img src="image/1寸.jpg" alt="Jamie SU" id="profile-image">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- 第一部分：关于我、技能、教育背景 -->
+    <section id="about" class="about">
+        <div class="container">
+            <!-- About Me -->
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Welcome to my homepage! I'm Jamie Su, an aspiring researcher who loves sports and music as much as photonics. Currently pursuing my MPhil in Microelectronics at HKUST(GZ), I'm passionate about photonic design automation and laser technologies. I thrive at the intersection of hardware and algorithms, believing that transformative innovation emerges from bridging physical systems with computational intelligence.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="education-section">
+                <h2 class="section-title" style="margin-top: 80px;">Educational Background</h2>
+                <div class="education-timeline">
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Master of Philosophy</h3>
+                            <p class="education-school">The Hong Kong University of Science and Technology (Guangzhou)</p>
+                            <p class="education-major">Microelectronics</p>
+                            <p class="education-period">2024 - 2026</p>
+                        </div>
+                        <div class="education-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Guangzhou, Guangdong, China</span>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Bachelor of Science</h3>
+                            <p class="education-school">Beijing Jiaotong University</p>
+                            <p class="education-major">Optoelectronic Information Science and Engineering</p>
+                            <p class="education-period">2020 - 2024</p>
+                        </div>
+                        <div class="education-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Beijing, China</span>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Bachelor of Engineering</h3>
+                            <p class="education-school">Beijing Jiaotong University</p>
+                            <p class="education-major">Computer Science and Technology</p>
+                            <p class="education-period">2020 - 2024</p>
+                        </div>
+                        <div class="education-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Beijing, China</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prizes -->
+    <section id="prizes" class="prizes">
+        <div class="container">
+            <h2 class="section-title">Prizes</h2>
+            <div class="prizes-list">
+                <div class="prize-card">
+                    <div class="prize-header">
+                        <h3>HKUST(GZ) Full Scholarship (CNY 240,000)</h3>
+                    </div>
+                    <p class="prize-org">The Hong Kong University of Science and Technology (Guangzhou)</p>
+                </div>
+                <div class="prize-card">
+                    <div class="prize-header">
+                        <h3>Provincial-Level Outstanding Project Leader</h3>
+                    </div>
+                    <p class="prize-org">College Students Innovation & Entrepreneurship Training Program</p>
+                </div>
+                <div class="prize-card">
+                    <div class="prize-header">
+                        <h3>3rd Prize (Undergraduate Group), National Finals</h3>
+                    </div>
+                    <p class="prize-org">National College Students English Vocabulary Competition</p>
+                </div>
+                <div class="prize-card">
+                    <div class="prize-header">
+                        <h3>Special Prize (Beijing Division)</h3>
+                    </div>
+                    <p class="prize-org">National College Students English Vocabulary Competition</p>
+                </div>
+                <div class="prize-card">
+                    <div class="prize-header">
+                        <h3>Second Prize</h3>
+                    </div>
+                    <p class="prize-org">National English Competition for College Students (NECCS), 2023</p>
+                </div>
+                <div class="prize-card">
+                    <div class="prize-header">
+                        <h3>Third Prize</h3>
+                    </div>
+                    <p class="prize-org">T-YOU (Tianyou) Programming Competition</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 2: Publications -->
+    <section id="papers" class="papers">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="papers-list">
+                <div class="paper-card">
+                    <div class="paper-main">
+                        <div class="paper-header">
+                            <h3>SuperPhys-Net: A Physics-Informed Super-Resolution Electromagnetic Simulator for Nanophotonic Devices</h3>
+                        </div>
+                        <p class="paper-authors">
+                            Authors:
+                            <span class="author-highlight">Yiyang Su</span>, Hao Chen, Guohao Dai, Yuzhe Ma, Yeyu Tong
+                        </p>
+                        <p class="paper-venue">Design, Automation and Test in Europe (DATE) 2026 (EDA Top-tier Conference)</p>
+                    </div>
+                    <div class="paper-image">
+                        <img src="image/DATE.png" alt="DATE 2026 paper figure">
+                    </div>
+                </div>
+                <div class="paper-card">
+                    <div class="paper-main">
+                        <div class="paper-header">
+                            <h3>Machine Learning-Assisted Design Automation of Integrated Photonic Devices</h3>
+                        </div>
+                        <p class="paper-authors">
+                            Authors:
+                            <span class="author-highlight">Yiyang Su</span>, Hao Chen, Yipeng Zang, Qinfen Hao, Yuzhe Ma, Yeyu Tong
+                        </p>
+                        <p class="paper-venue">International Symposium of EDA (ISEDA) 2025 (EDA Conference)</p>
+                        <div class="paper-links">
+                            <a href="https://ieeexplore.ieee.org/abstract/document/11101099" target="_blank" class="paper-link"><i class="fas fa-external-link-alt"></i> View Paper</a>
+                        </div>
+                    </div>
+                    <div class="paper-image">
+                        <img src="image/ISEDA.png" alt="ISEDA 2025 paper figure">
+                    </div>
+                </div>
+                <div class="paper-card">
+                    <div class="paper-main">
+                        <div class="paper-header">
+                            <h3>Adaptive navigation for robots in unstructured agricultural environments using stable feature localization and multi-sensor obstacle detection</h3>
+                        </div>
+                        <p class="paper-authors">
+                            Authors:
+                            Xingbo Yao, Baohua Zhang, Xuanmin Wang, <span class="author-highlight">Yiyang Su</span>, Guangzheng Cao, Yifan Bian
+                        </p>
+                        <p class="paper-venue">Computers and Electronics in Agriculture 2025 (JCR Q1 Journal)</p>
+                        <div class="paper-links">
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0168169925004089" target="_blank" class="paper-link"><i class="fas fa-external-link-alt"></i> View Paper</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="paper-card">
+                    <div class="paper-main">
+                        <div class="paper-header">
+                            <h3>Observation of operation states and wavelength-switching in spatiotemporal mode-locked lasers</h3>
+                        </div>
+                        <p class="paper-authors">
+                            Authors:
+                            Huaiwei Zhang, Jiying Peng, ..., <span class="author-highlight">Yiyang Su</span>, ..., Jianquan Yao
+                        </p>
+                        <p class="paper-venue">Optics &amp; Laser Technology 2024 (JCR Q2 Journal)</p>
+                        <div class="paper-links">
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0030399223013555" target="_blank" class="paper-link"><i class="fas fa-external-link-alt"></i> View Paper</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="paper-card">
+                    <div class="paper-main">
+                        <div class="paper-header">
+                            <h3>All-multimode fiber spatiotemporal mode-locked figure-eight laser based on multimode gain fiber</h3>
+                        </div>
+                        <p class="paper-authors">
+                            Authors:
+                            Guoyu Xu, Jiying Peng, ..., <span class="author-highlight">Yiyang Su</span>, Yi Zheng
+                        </p>
+                        <p class="paper-venue">Optics Express 2023 (JCR Q1 Journal)</p>
+                        <div class="paper-links">
+                            <a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-31-26-44603" target="_blank" class="paper-link"><i class="fas fa-external-link-alt"></i> View Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 3: Internships -->
+    <section id="internships" class="internships">
+        <div class="container">
+            <h2 class="section-title">Internships</h2>
+            <div class="internships-timeline">
+                <div class="internship-item">
+                    <div class="internship-date">
+                        <span class="date-period">Sep 2024 - Present</span>
+                    </div>
+                    <div class="internship-content">
+                        <div class="internship-main">
+                            <h3>ASML Lithography Facilities Science and Technology</h3>
+                            <p class="internship-position">Marketing Intern</p>
+                            <p class="internship-location">Shenzhen, China</p>
+                            <p class="internship-location">Mentor: Zhiqin Li</p>
+                            <p class="internship-description">
+                                Led technical research on computational lithography for sub-5nm nodes, analyzing DUV/EUV challenges in FinFET/GAAFET manufacturing and evaluating GPU alternatives to CUDA platforms.
+                            </p>
+                        </div>
+                        <div class="internship-logo">
+                            <img src="image/ASML.png" alt="ASML logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="internship-item">
+                    <div class="internship-date">
+                        <span class="date-period">Jun 2022 - Sep 2022</span>
+                    </div>
+                    <div class="internship-content">
+                        <div class="internship-main">
+                            <h3>Fourth Paradigm</h3>
+                            <p class="internship-position">Product Manager Intern</p>
+                            <p class="internship-location">Beijing, China</p>
+                            <p class="internship-location">Mentor: Yi Jiang</p>
+                            <p class="internship-description">
+                                Conducted product analysis and optimization for Hypercycle, an AI-driven risk decision platform serving banking sector clients.
+                            </p>
+                        </div>
+                        <div class="internship-logo">
+                            <img src="image/4paradigm.png" alt="Fourth Paradigm logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 4: Entrepreneurship -->
+    <section id="entrepreneurship" class="entrepreneurship">
+        <div class="container">
+            <h2 class="section-title">Entrepreneurship</h2>
+            <div class="entrepreneurship-list">
+                <div class="entrepreneurship-card">
+                    <div class="entrepreneurship-header">
+                        <h3>OptiFlow</h3>
+                        <span class="entrepreneurship-period">Jun 2025 - Present</span>
+                        <div class="entrepreneurship-logo">
+                            <img src="image/optiflow.png" alt="OptiFlow logo">
+                        </div>
+                    </div>
+                    <p class="entrepreneurship-role">Founder &amp; Product Lead</p>
+                    <p class="entrepreneurship-description">
+                        Developing an integrated photonic chip platform that unifies device design, circuit design, physical layout, and chip fabrication into a single automated workflow.
+                    </p>
+                    <div class="entrepreneurship-achievements">
+                        <div class="achievement-item">
+                            <i class="fas fa-coins"></i>
+                            <span>Seed Funding: 300,000 CNY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills (moved to the end) -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-image">
+                        <img src="image/images.png" alt="English IELTS">
+                    </div>
+                    <h3>English (IELTS)</h3>
+                    <p>Overall Score: 7.0</p>
+                    <div class="skill-level">
+                        <div class="skill-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-image">
+                        <img src="image/python.png" alt="Python">
+                    </div>
+                    <h3>Python</h3>
+                    <p>Programming language</p>
+                    <div class="skill-level">
+                        <div class="skill-bar" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-image">
+                        <img src="image/C.jpg" alt="C">
+                    </div>
+                    <h3>C</h3>
+                    <p>Programming language</p>
+                    <div class="skill-level">
+                        <div class="skill-bar" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-image">
+                        <img src="image/lumerical.jpg" alt="Lumerical">
+                    </div>
+                    <h3>Lumerical</h3>
+                    <p>Simulation software</p>
+                    <div class="skill-level">
+                        <div class="skill-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-image">
+                        <img src="image/matlab.png" alt="MATLAB">
+                    </div>
+                    <h3>MATLAB</h3>
+                    <p>Simulation software</p>
+                    <div class="skill-level">
+                        <div class="skill-bar" style="width: 88%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Personal Homepage. All rights reserved.</p>
+            <p>Made with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
