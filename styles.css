@@ -367,6 +367,16 @@ body {
     border-radius: 2px;
 }
 
+.section-subtitle {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: -1.5rem;
+    margin-bottom: 3rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
 .about-content {
     max-width: 800px;
     margin: 0 auto;
@@ -378,6 +388,31 @@ body {
     color: var(--text-light);
     text-align: center;
     line-height: 1.8;
+}
+
+.supervisor-info {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.supervisor-info strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.supervisor-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.supervisor-link:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
 }
 
 .about-stats {
