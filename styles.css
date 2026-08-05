@@ -976,6 +976,12 @@ body {
     display: block;
 }
 
+.internship-logo-aurora img {
+    max-width: 140%;
+    max-height: 140%;
+    transform: scale(1.25);
+}
+
 /* 创业经历部分 */
 .entrepreneurship {
     padding: 100px 0;
