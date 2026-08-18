@@ -1279,6 +1279,28 @@ body {
     border-color: var(--primary-color);
 }
 
+/* 访问者地图 */
+.visitors {
+    padding: 100px 0;
+    background: var(--bg-color);
+}
+
+.visitor-map-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.visitor-globe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    min-height: 360px;
+    background: var(--bg-section);
+}
+
 /* 页脚 */
 .footer {
     background: var(--bg-dark);
@@ -1493,6 +1515,11 @@ body {
 
     .paper-card {
         gap: 1.25rem;
+    }
+
+    .visitor-globe {
+        min-height: 280px;
+        padding: 1rem;
     }
 }
 
