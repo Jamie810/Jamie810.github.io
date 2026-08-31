@@ -22,18 +22,32 @@ window.addEventListener('DOMContentLoaded', () => {
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+function setMobileMenuOpen(isOpen) {
+    if (!navMenu || !hamburger) {
+        return;
+    }
+    navMenu.classList.toggle('active', isOpen);
+    hamburger.classList.toggle('active', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
+}
 
-// 点击导航链接后关闭移动端菜单
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        setMobileMenuOpen(!navMenu.classList.contains('active'));
     });
-});
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            setMobileMenuOpen(false);
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            setMobileMenuOpen(false);
+        }
+    });
+}
 
 // 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -87,7 +101,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-const skillsSection = document.querySelector('.skills-section');
+const skillsSection = document.querySelector('.skills-section') || document.querySelector('.skills');
 if (skillsSection) {
     observer.observe(skillsSection);
 }
