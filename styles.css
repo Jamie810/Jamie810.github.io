@@ -2104,3 +2104,13 @@ img {
         height: 36px;
     }
 }
+
+
+/* ================================
+   Mobile: hide images for first 2 papers
+   ================================ */
+   @media (max-width: 768px) {
+    .paper-card:nth-child(-n+2) .paper-image {
+        display: none;
+    }
+}

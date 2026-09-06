@@ -1,14 +1,6 @@
-// 根据时间显示问候语
+// 固定问候语，不根据访问者时区变化
 function getGreeting() {
-    const hour = new Date().getHours();
-
-    if (hour >= 5 && hour < 12) {
-        return 'Good Morning';
-    } else if (hour >= 12 && hour < 18) {
-        return 'Good Afternoon';
-    } else {
-        return 'Good Evening';
-    }
+    return 'Greetings!';
 }
 
 
