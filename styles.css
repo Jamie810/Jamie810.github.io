@@ -147,8 +147,12 @@ img {
 .hamburger {
     display: none;
     flex-direction: column;
+    justify-content: center;
     cursor: pointer;
     gap: 5px;
+    padding: 10px;
+    margin: -10px;
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -157,6 +161,18 @@ img {
     background: var(--text-color);
     border-radius: 3px;
     transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* 首页部分 */
@@ -1313,6 +1329,13 @@ img {
     padding: 1.5rem;
     min-height: 360px;
     background: var(--bg-section);
+    overflow: hidden;
+}
+
+.visitor-globe iframe,
+.visitor-globe img,
+.visitor-globe > div {
+    max-width: 100%;
 }
 
 /* 页脚 */
@@ -1364,176 +1387,720 @@ img {
     }
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: white;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: var(--shadow);
-        padding: 2rem 0;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
+/* 响应式设计 — 平板 */
+@media (max-width: 1024px) {
     .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
+        gap: 2.5rem;
     }
 
     .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.25rem;
-    }
-
-    .hero-contact {
-        margin-bottom: 1.5rem;
-    }
-
-    .contact-info-item {
-        font-size: 1rem;
-    }
-
-    .avatar {
-        width: 200px;
-        height: 200px;
-        font-size: 5rem;
-    }
-
-    .about-stats {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
+        font-size: 2.75rem;
     }
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .skill-image {
-        width: 60px;
-        height: 60px;
-    }
-
-    .skill-card {
-        padding: 1rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    @media (max-width: 480px) {
-        .skills-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .prize-header {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .prize-year {
-        align-self: flex-start;
-    }
-
-    .prizes-list {
-        max-height: 420px;
-    }
-
-    .education-timeline,
-    .internships-timeline {
-        padding-left: 1.5rem;
-    }
-
-    .education-item,
-    .internship-item {
-        padding-left: 2rem;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .education-location {
-        align-self: flex-start;
-        margin-top: 0;
-    }
-
-    .education-icon {
-        left: -1rem;
-        width: 2rem;
-        height: 2rem;
-        font-size: 1rem;
-    }
-
-    .internship-date {
-        left: -1rem;
-    }
-
-    .internship-content {
-        flex-direction: column;
-        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .internship-logo {
-        width: 120px;
-        height: 120px;
-    }
-
-    .paper-header {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .paper-year {
-        align-self: flex-start;
-    }
-
-    .entrepreneurship-timeline,
-    .internships-timeline {
-        padding-left: 1.5rem;
-    }
-
-    .entrepreneurship-date,
-    .internship-date {
-        left: -1rem;
-    }
-
-    .entrepreneurship-content {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .entrepreneurship-logo {
-        width: 120px;
-        height: 120px;
-        align-self: center;
-    }
-
-    .paper-card {
-        gap: 1.25rem;
-    }
-
-    .visitor-globe {
-        min-height: 280px;
-        padding: 1rem;
+        width: 160px;
+        height: 160px;
     }
 }
 
+
+/* 当前导航项 */
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* 响应式设计 — 手机端：保持桌面布局逻辑，同时压缩尺寸与纵向间距 */
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 58px;
+    }
+
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    /* 手机端采用紧凑的横向导航栏，不再打开全屏菜单 */
+    .navbar .container {
+        padding: 0.55rem 12px;
+        gap: 10px;
+    }
+
+    .nav-brand {
+        font-size: 1.15rem;
+        flex-shrink: 0;
+    }
+
+    .nav-menu {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        flex: 1;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0;
+        gap: 0.15rem;
+        box-shadow: none;
+        background: transparent;
+        text-align: left;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-menu li {
+        width: auto;
+        flex: 0 0 auto;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.35rem 0.55rem;
+        font-size: 0.72rem;
+        white-space: nowrap;
+        font-weight: 600;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-link.active {
+        background: rgba(37, 99, 235, 0.09);
+        color: var(--primary-color);
+        border-radius: 999px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* Hero：手机仍保持左右布局，避免头像独占一整行 */
+    .hero {
+        min-height: 78vh;
+        padding: 70px 0 32px;
+    }
+
+    .hero-content {
+        grid-template-columns: minmax(0, 1.65fr) minmax(105px, 0.85fr);
+        gap: 0.8rem;
+        padding: 0 12px;
+        align-items: center;
+    }
+
+    .hero-text {
+        text-align: left;
+    }
+
+    .hero-image {
+        order: initial;
+    }
+
+    .hero-title {
+        font-size: clamp(1.45rem, 6vw, 2rem);
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.78rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-contact {
+        align-items: flex-start;
+        gap: 0.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .contact-info-item {
+        font-size: 0.7rem;
+        gap: 0.35rem;
+        justify-content: flex-start;
+        line-height: 1.35;
+    }
+
+    .contact-info-item i {
+        font-size: 0.72rem;
+        width: 13px;
+    }
+
+    .hero-buttons {
+        gap: 0.4rem;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .btn {
+        width: auto;
+        padding: 0.48rem 0.7rem;
+        font-size: 0.7rem;
+        border-radius: 0.35rem;
+        white-space: nowrap;
+    }
+
+    .avatar {
+        width: clamp(105px, 29vw, 145px);
+        height: clamp(105px, 29vw, 145px);
+        border-width: 3px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* 所有 section 大幅减少上下留白 */
+    .about,
+    .prizes,
+    .papers,
+    .internships,
+    .entrepreneurship,
+    .skills,
+    .visitors,
+    .contact,
+    .projects {
+        padding: 34px 0;
+    }
+
+    .section-title {
+        font-size: 1.55rem;
+        line-height: 1.2;
+        margin-bottom: 1.55rem;
+    }
+
+    .section-title::after {
+        width: 48px;
+        height: 2px;
+        bottom: -6px;
+    }
+
+    .section-subtitle {
+        font-size: 0.72rem;
+        margin-top: -0.75rem;
+        margin-bottom: 1.4rem;
+        padding: 0 0.25rem;
+    }
+
+    /* About */
+    .about-content {
+        max-width: none;
+    }
+
+    .about-text p {
+        font-size: 0.82rem;
+        text-align: left;
+        line-height: 1.6;
+        margin-bottom: 0.7rem;
+    }
+
+    .education-section {
+        margin-top: 1.7rem;
+    }
+
+    /* 覆盖 inline style="margin-top:80px" */
+    .education-section .section-title {
+        margin-top: 0 !important;
+    }
+
+    .education-timeline,
+    .internships-timeline,
+    .entrepreneurship-timeline {
+        max-width: none;
+        padding-left: 0;
+    }
+
+    .education-timeline::before,
+    .internships-timeline::before,
+    .entrepreneurship-timeline::before {
+        display: none;
+    }
+
+    .education-item {
+        display: grid;
+        grid-template-columns: 30px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.75rem;
+        margin-bottom: 0.7rem;
+        border-radius: 0.65rem;
+    }
+
+    .education-item:hover {
+        transform: none;
+    }
+
+    .education-icon {
+        position: static;
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+
+    .education-content h3 {
+        font-size: 0.86rem;
+        line-height: 1.25;
+        margin-bottom: 0.15rem;
+    }
+
+    .education-school {
+        font-size: 0.72rem;
+        line-height: 1.3;
+        margin-bottom: 0.15rem;
+    }
+
+    .education-major {
+        font-size: 0.68rem;
+        line-height: 1.3;
+        margin-top: 0.1rem;
+    }
+
+    .education-period {
+        font-size: 0.62rem;
+        margin-bottom: 0;
+    }
+
+    .education-location {
+        font-size: 0.62rem;
+        gap: 0.25rem;
+        margin-top: 0;
+        white-space: normal;
+        max-width: 78px;
+        text-align: right;
+        justify-content: flex-end;
+    }
+
+    .education-location i {
+        font-size: 0.62rem;
+    }
+
+    /* Prizes：两列，显著减少页面长度 */
+    .prizes-list {
+        max-width: none;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+        max-height: none;
+        padding-right: 0;
+        overflow: visible;
+    }
+
+    .prize-card {
+        padding: 0.8rem;
+        border-left-width: 3px;
+        border-radius: 0.65rem;
+    }
+
+    .prize-header {
+        margin-bottom: 0.3rem;
+    }
+
+    .prize-header h3 {
+        font-size: 0.78rem;
+        line-height: 1.3;
+    }
+
+    .prize-org {
+        font-size: 0.66rem;
+        line-height: 1.35;
+        margin-bottom: 0;
+    }
+
+    /* Publications：保持桌面端“文字 + 图片”的横向关系 */
+    .papers-list {
+        max-width: none;
+        gap: 0.8rem;
+    }
+
+    .paper-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 0.65rem;
+        padding: 0.85rem;
+        border-left-width: 3px;
+        border-radius: 0.65rem;
+    }
+
+    .paper-main {
+        min-width: 0;
+    }
+
+    .paper-header {
+        margin-bottom: 0.35rem;
+    }
+
+    .paper-header h3 {
+        font-size: 0.78rem;
+        line-height: 1.35;
+        word-break: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .paper-authors,
+    .paper-venue {
+        font-size: 0.65rem;
+        line-height: 1.4;
+    }
+
+    .paper-authors {
+        margin-bottom: 0.2rem;
+    }
+
+    .paper-venue {
+        margin-bottom: 0.35rem;
+    }
+
+    .paper-links {
+        gap: 0.35rem;
+        margin-top: 0.25rem;
+    }
+
+    .paper-link {
+        padding: 0.3rem 0.55rem;
+        font-size: 0.62rem;
+        border-radius: 0.3rem;
+    }
+
+    .paper-image {
+        width: clamp(72px, 23vw, 105px);
+        flex: 0 0 clamp(72px, 23vw, 105px);
+        margin-top: 0;
+        border-radius: 0.45rem;
+    }
+
+    /* 没有论文图片的卡片也保持紧凑 */
+    .paper-card:not(:has(.paper-image)) {
+        min-height: 0;
+    }
+
+    /* Internships：日期 + 内容 + logo 保持横向信息密度 */
+    .internship-item {
+        padding: 0.85rem;
+        margin-bottom: 0.8rem;
+        border-radius: 0.65rem;
+    }
+
+    .internship-item:hover {
+        transform: none;
+    }
+
+    .internship-date,
+    .entrepreneurship-date {
+        position: static;
+        margin-bottom: 0.45rem;
+    }
+
+    .date-period {
+        padding: 0.25rem 0.55rem;
+        font-size: 0.62rem;
+        border-radius: 0.7rem;
+    }
+
+    .internship-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 76px;
+        gap: 0.7rem;
+        align-items: start;
+    }
+
+    .internship-content h3 {
+        font-size: 0.82rem;
+        line-height: 1.3;
+        margin-bottom: 0.2rem;
+        overflow-wrap: anywhere;
+    }
+
+    .internship-position {
+        font-size: 0.68rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .internship-location {
+        font-size: 0.62rem;
+        line-height: 1.3;
+        margin-bottom: 0.2rem;
+    }
+
+    .internship-description {
+        font-size: 0.67rem;
+        line-height: 1.45;
+        margin-bottom: 0;
+    }
+
+    .internship-logo {
+        width: 76px;
+        height: 76px;
+        border-radius: 0.5rem;
+    }
+
+    /* Entrepreneurship */
+    .entrepreneurship-item {
+        margin-bottom: 0.8rem;
+    }
+
+    .entrepreneurship-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 78px;
+        gap: 0.7rem;
+        padding: 0.9rem;
+        border-top-width: 3px;
+        border-radius: 0.65rem;
+    }
+
+    .entrepreneurship-main h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .entrepreneurship-role {
+        font-size: 0.68rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .entrepreneurship-description {
+        font-size: 0.68rem;
+        line-height: 1.45;
+        margin-bottom: 0.55rem;
+    }
+
+    .entrepreneurship-achievements {
+        gap: 0.35rem;
+        margin-bottom: 0;
+        padding: 0.45rem;
+    }
+
+    .achievement-item {
+        font-size: 0.65rem;
+    }
+
+    .achievement-item i {
+        font-size: 0.72rem;
+    }
+
+    .entrepreneurship-logo {
+        width: 78px;
+        height: 78px;
+        border-radius: 0.5rem;
+        align-self: start;
+    }
+
+    /* Skills：两/三列小卡片，而不是单列 */
+    .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.65rem;
+    }
+
+    .skill-card {
+        padding: 0.65rem 0.4rem;
+        border-radius: 0.6rem;
+    }
+
+    .skill-image {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 0.35rem;
+    }
+
+    .skill-card h3 {
+        font-size: 0.72rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .skill-card p {
+        font-size: 0.6rem;
+        margin-bottom: 0.4rem;
+        line-height: 1.25;
+    }
+
+    .skill-level {
+        width: 90%;
+        height: 4px;
+    }
+
+    /* Map */
+    .visitor-globe {
+        min-height: 190px;
+        padding: 0.6rem;
+    }
+
+    .footer {
+        padding: 1rem 0;
+        font-size: 0.65rem;
+    }
+}
+
+/* 超窄屏：只进一步缩小，不重新堆叠布局 */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .navbar .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .nav-brand {
+        font-size: 1rem;
+    }
+
+    .nav-link {
+        padding-left: 0.42rem;
+        padding-right: 0.42rem;
+        font-size: 0.67rem;
+    }
+
+    .hero {
+        min-height: 72vh;
+        padding-top: 64px;
+    }
+
+    .hero-content {
+        grid-template-columns: minmax(0, 1.7fr) minmax(92px, 0.8fr);
+        gap: 0.55rem;
+    }
+
+    .hero-title {
+        font-size: 1.38rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.7rem;
+    }
+
+    .contact-info-item {
+        font-size: 0.62rem;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn {
+        padding: 0.42rem 0.52rem;
+        font-size: 0.62rem;
+    }
+
+    .about,
+    .prizes,
+    .papers,
+    .internships,
+    .entrepreneurship,
+    .skills,
+    .visitors {
+        padding: 28px 0;
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+        margin-bottom: 1.35rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.66rem;
+        margin-bottom: 1.15rem;
+    }
+
+    .education-item {
+        grid-template-columns: 27px minmax(0, 1fr) 65px;
+        gap: 0.45rem;
+        padding: 0.65rem;
+    }
+
+    .education-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 0.68rem;
+    }
+
+    .education-content h3 {
+        font-size: 0.78rem;
+    }
+
+    .education-school,
+    .education-major {
+        font-size: 0.62rem;
+    }
+
+    .education-period,
+    .education-location {
+        font-size: 0.57rem;
+    }
+
+    .prizes-list {
+        gap: 0.55rem;
+    }
+
+    .prize-card {
+        padding: 0.65rem;
+    }
+
+    .prize-header h3 {
+        font-size: 0.7rem;
+    }
+
+    .prize-org {
+        font-size: 0.59rem;
+    }
+
+    .paper-card {
+        padding: 0.7rem;
+    }
+
+    .paper-header h3 {
+        font-size: 0.7rem;
+    }
+
+    .paper-authors,
+    .paper-venue {
+        font-size: 0.58rem;
+    }
+
+    .paper-image {
+        width: 70px;
+        flex-basis: 70px;
+    }
+
+    .internship-content,
+    .entrepreneurship-content {
+        grid-template-columns: minmax(0, 1fr) 65px;
+    }
+
+    .internship-logo,
+    .entrepreneurship-logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .skills-grid {
+        gap: 0.5rem;
+    }
+
+    .skill-card {
+        padding: 0.55rem 0.3rem;
+    }
+
+    .skill-image {
+        width: 36px;
+        height: 36px;
+    }
+}
