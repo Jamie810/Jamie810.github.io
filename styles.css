@@ -1790,8 +1790,7 @@ img {
     .paper-card:not(:has(.paper-image)) {
         min-height: 0;
     }
-
-    /* Internships：日期 + 内容 + logo 保持横向信息密度 */
+/* Internships：日期 + 内容 + logo 保持横向信息密度 */
     .internship-item {
         padding: 0.85rem;
         margin-bottom: 0.8rem;
@@ -2105,12 +2104,12 @@ img {
     }
 }
 
-
-/* ================================
-   Mobile: hide images for first 2 papers
-   ================================ */
-   @media (max-width: 768px) {
-    .paper-card:nth-child(-n+2) .paper-image {
-        display: none;
+/* =====================================================
+   FINAL MOBILE FIX: hide images in the first two papers
+   ===================================================== */
+@media screen and (max-width: 768px) {
+    .papers-list > .paper-card:nth-of-type(1) > .paper-image,
+    .papers-list > .paper-card:nth-of-type(2) > .paper-image {
+        display: none !important;
     }
 }
