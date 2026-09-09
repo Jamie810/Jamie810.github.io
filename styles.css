@@ -94,7 +94,7 @@ img {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    margin-right: 2rem;
+    margin-right: 4rem;
     transition: all 0.3s ease;
 }
 
@@ -2121,7 +2121,7 @@ img {
 /* =====================================================
    FINAL MOBILE FIX: hide images in the first two papers
    ===================================================== */
-   @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     .papers-list > .paper-card:nth-of-type(1) > .paper-image,
     .papers-list > .paper-card:nth-of-type(2) > .paper-image {
