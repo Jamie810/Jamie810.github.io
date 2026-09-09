@@ -2171,9 +2171,12 @@ img {
 
 
 /* ===== 电脑端：logo 与下方内容对齐，点击展开竖向菜单 ===== */
+/* ===== 电脑端：占满整屏，logo 贴最左，点击展开竖向菜单 ===== */
 @media (min-width: 769px) {
-    /* 不需要占满整屏，删掉之前的 max-width: none，恢复默认的 1200px 居中容器，
-       logo 就和 Hero 标题天然对齐 */
+    .navbar .container {
+        max-width: none;
+        padding: 1rem 40px;
+    }
 
     .nav-brand {
         cursor: pointer;
@@ -2216,11 +2219,10 @@ img {
         opacity: 0.35;
     }
 
-    /* 下拉菜单左边距 = 容器 padding，与 logo 对齐 */
     .nav-menu {
         position: absolute;
         top: 100%;
-        left: 20px;
+        left: 40px;
         flex-direction: column;
         gap: 0.25rem;
         background: rgba(255, 255, 255, 0.98);
