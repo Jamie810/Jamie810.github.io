@@ -94,6 +94,7 @@ img {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    margin-right: 2rem;
     transition: all 0.3s ease;
 }
 
