@@ -2150,4 +2150,21 @@ img {
         line-height: 1.4;
         margin-top: 0.35rem;
     }
+
+    /* --- ⬇️ 在这里直接加入导航栏移动端滑动的代码 ⬇️ --- */
+    .nav-menu {
+        display: flex;
+        overflow-x: auto !important;          /* 开启横向滚动 */
+        white-space: nowrap !important;       /* 强行不换行 */
+        -webkit-overflow-scrolling: touch; /* 保证手机端滑动顺畅 */
+        scrollbar-width: none;              /* 隐藏 Firefox 滚动条 */
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        display: none;                      /* 隐藏 Chrome/Safari 滚动条 */
+    }
+
+    .nav-link {
+        flex-shrink: 0;                     /* 防止菜单文字在手机上被挤压变形 */
+    }
 }
