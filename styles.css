@@ -2301,6 +2301,21 @@ body.dark-mode {
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
 }
 
+nav-brand .logo-dark {
+    display: none !important;
+}
+.nav-brand .logo-light {
+    display: inline-block !important;
+}
+
+/* 深色模式：隐藏浅色 Logo，显示深色 Logo */
+body.dark-mode .nav-brand .logo-light {
+    display: none !important;
+}
+body.dark-mode .nav-brand .logo-dark {
+    display: inline-block !important;
+}
+
 /* 适配第一页 (Hero Section) */
 body.dark-mode .hero,
 body.dark-mode #home {
