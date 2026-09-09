@@ -2170,9 +2170,16 @@ img {
 }
 
 /* ===== 电脑端：导航条占满整屏，图标贴最左边 ===== */
+/* ===== 电脑端：导航条占满整屏，图标贴最左，菜单均匀铺开 ===== */
 @media (min-width: 769px) {
     .navbar .container {
         max-width: none;
         padding: 1rem 40px;
+        gap: 2rem;
+    }
+
+    .nav-menu {
+        flex: 1;                       /* 占满图标右侧的全部空间 */
+        justify-content: space-evenly; /* 各链接之间均匀分布 */
     }
 }
