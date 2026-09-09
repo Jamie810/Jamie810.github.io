@@ -214,3 +214,22 @@ if (navBrand && navMenu && window.matchMedia('(min-width: 769px)').matches) {
         }
     });
 }
+
+// 深色模式开关
+const themeToggle = document.getElementById('theme-toggle');
+
+// 页面加载时恢复用户之前的选择
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    if (themeToggle) themeToggle.querySelector('i').className = 'fas fa-sun';
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        // 月亮 / 太阳图标互换
+        themeToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        // 记住选择，下次打开网页保持
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+}

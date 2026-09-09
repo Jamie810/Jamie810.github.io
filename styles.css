@@ -2262,3 +2262,80 @@ img {
         color: var(--primary-color);
     }
 }
+
+
+/* ===== 月亮开关：始终固定在最上层最右边 ===== */
+.theme-toggle {
+    margin-left: auto;          /* 推到最右 */
+    flex-shrink: 0;             /* 手机端导航滑动时按钮不被压缩 */
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.theme-toggle:hover {
+    background: rgba(37, 99, 235, 0.18);
+    transform: scale(1.08);
+}
+
+/* ===== 深色模式：覆盖全局变量（首页 Hero 不受影响） ===== */
+body.dark-mode {
+    --text-color: #e2e8f0;
+    --text-light: #b0bdd0;
+    --text-lighter: #8b99ad;
+    --bg-color: #0a1120;      /* 原来是 #ffffff */
+    --bg-light: #0f1a2b;      /* 原来是 #f8fafc */
+    --bg-section: #0d1626;
+    --border-color: #243350;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* 写死 white 的组件，逐个翻成深色卡片 */
+body.dark-mode .navbar {
+    background: rgba(10, 17, 32, 0.95);
+}
+
+body.dark-mode .nav-menu {
+    background: rgba(15, 26, 43, 0.98);
+}
+
+body.dark-mode .skill-card,
+body.dark-mode .paper-card,
+body.dark-mode .prize-card,
+body.dark-mode .education-item,
+body.dark-mode .internship-item,
+body.dark-mode .entrepreneurship-content,
+body.dark-mode .visitor-map-card {
+    background: #14213a;
+    color: var(--text-color);
+}
+
+body.dark-mode .entrepreneurship-achievements {
+    background: #0f1a2b;
+}
+
+body.dark-mode .visitor-globe {
+    background: #0d1626;
+}
+
+body.dark-mode .theme-toggle {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--primary-light);
+}
+
+body.dark-mode .nav-link.active {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--primary-light);
+}
