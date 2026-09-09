@@ -2121,23 +2121,33 @@ img {
 /* =====================================================
    FINAL MOBILE FIX: hide images in the first two papers
    ===================================================== */
-@media screen and (max-width: 768px) {
+   @media screen and (max-width: 768px) {
+
     .papers-list > .paper-card:nth-of-type(1) > .paper-image,
     .papers-list > .paper-card:nth-of-type(2) > .paper-image {
         display: none !important;
     }
 
     .education-item {
-        display: flex;
-        flex-direction: column;
-        position: relative;
+        display: grid;
+        grid-template-columns: 30px minmax(0, 1fr) auto;
+        align-items: start;
+        gap: 0.65rem;
     }
 
-    /* 如果地点使用了绝对定位，在移动端取消绝对定位，使其自然下移 */
-    .education-location, 
+    /* 移动端 location 回到右侧的正常网格位置 */
+    .education-location,
     .education-item .location {
         position: static !important;
-        margin-top: 0.25rem;
-        text-align: left;
+        margin-top: 0;
+        text-align: right;
+        justify-content: flex-end;
+    }
+
+    /* Thesis 与学校、专业保持一致的移动端字号 */
+    .education-thesis {
+        font-size: 0.62rem !important;
+        line-height: 1.4;
+        margin-top: 0.35rem;
     }
 }
