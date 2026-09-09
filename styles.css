@@ -2168,3 +2168,11 @@ img {
         flex-shrink: 0;                     /* 防止菜单文字在手机上被挤压变形 */
     }
 }
+
+/* ===== 电脑端：导航条占满整屏，图标贴最左边 ===== */
+@media (min-width: 769px) {
+    .navbar .container {
+        max-width: none;
+        padding: 1rem 40px;
+    }
+}
