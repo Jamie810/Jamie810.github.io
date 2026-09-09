@@ -654,6 +654,18 @@ img {
     font-size: 1rem;
 }
 
+.education-thesis {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.education-thesis span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 .education-content {
     flex: 1;
 }
