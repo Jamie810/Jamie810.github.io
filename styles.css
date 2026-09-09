@@ -2263,7 +2263,6 @@ img {
     }
 }
 
-
 /* ===== 月亮开关：始终固定在最上层最右边 ===== */
 .theme-toggle {
     margin-left: auto;          /* 推到最右 */
@@ -2288,18 +2287,34 @@ img {
     transform: scale(1.08);
 }
 
-/* ===== 深色模式：覆盖全局变量（首页 Hero 不受影响） ===== */
+/* ===== 深色模式：全局变量覆盖 ===== */
 body.dark-mode {
     --text-color: #e2e8f0;
     --text-light: #b0bdd0;
     --text-lighter: #8b99ad;
-    --bg-color: #0a1120;      /* 原来是 #ffffff */
-    --bg-light: #0f1a2b;      /* 原来是 #f8fafc */
+    --bg-color: #0a1120;       /* 原来是 #ffffff */
+    --bg-light: #0f1a2b;       /* 原来是 #f8fafc */
     --bg-section: #0d1626;
     --border-color: #243350;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.55);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* 适配第一页 (Hero Section) */
+body.dark-mode .hero,
+body.dark-mode #home {
+    background: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .hero h1,
+body.dark-mode .hero h2,
+body.dark-mode .hero p,
+body.dark-mode #home h1,
+body.dark-mode #home h2,
+body.dark-mode #home p {
+    color: var(--text-color) !important;
 }
 
 /* 写死 white 的组件，逐个翻成深色卡片 */
