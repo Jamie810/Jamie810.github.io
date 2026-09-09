@@ -2182,4 +2182,10 @@ img {
         flex: 1;                       /* 占满图标右侧的全部空间 */
         justify-content: space-evenly; /* 各链接之间均匀分布 */
     }
+    .nav-brand img {
+        width: 56px;
+        height: 56px;
+    }
+
+
 }
