@@ -2125,13 +2125,17 @@ img {
         display: none !important;
     }
 
-    .education-thesis {
-        font-size: 0.62rem;
-        line-height: 1.4;
-        margin-top: 0.35rem;
+    .education-item {
+        display: flex;
+        flex-direction: column;
+        position: relative;
     }
 
-    .education-item {
-        display: grid;
+    /* 如果地点使用了绝对定位，在移动端取消绝对定位，使其自然下移 */
+    .education-location, 
+    .education-item .location {
+        position: static !important;
+        margin-top: 0.25rem;
+        text-align: left;
     }
 }
