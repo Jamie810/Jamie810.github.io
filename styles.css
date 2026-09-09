@@ -659,6 +659,7 @@ img {
     line-height: 1.7;
     margin-top: 0.75rem;
     font-size: 0.95rem;
+    max-width: 100%;
 }
 
 .education-thesis span {
