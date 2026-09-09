@@ -76,7 +76,7 @@ img {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: transparent;
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
     z-index: 1000;
