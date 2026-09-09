@@ -76,7 +76,7 @@ img {
     position: fixed;
     top: 0;
     width: 100%;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
     z-index: 1000;
@@ -2197,7 +2197,7 @@ img {
         margin-left: 16px;
         font-size: 1.05rem;
         font-weight: 600;
-        color: #000000;
+        color: var(--text-color);
         letter-spacing: 0.5px;
         transition: opacity 0.4s ease;
     }
