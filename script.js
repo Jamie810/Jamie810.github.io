@@ -185,3 +185,32 @@ fadeElements.forEach(element => {
     fadeObserver.observe(element);
 });
 
+// 电脑端：点击 logo 展开/收起竖向菜单
+const navBrand = document.querySelector('.nav-brand');
+
+if (navBrand && navMenu && window.matchMedia('(min-width: 769px)').matches) {
+    const closeMenu = () => {
+        navMenu.classList.remove('active');
+        navBrand.classList.remove('open');
+    };
+
+    // 点击 logo：切换展开状态 + 箭头旋转 + 标记"已提示过"
+    navBrand.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navMenu.classList.toggle('active');
+        navBrand.classList.toggle('open', isOpen);
+        navBrand.classList.add('hinted');
+    });
+
+    // 点击任一菜单链接后自动收起
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // 点击页面任意其他位置，收起菜单
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !navBrand.contains(e.target)) {
+            closeMenu();
+        }
+    });
+}
