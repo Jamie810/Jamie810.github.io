@@ -107,6 +107,13 @@ img {
     background-clip: text;
 }
 
+.nav-brand img {
+    width: 32px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
