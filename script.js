@@ -230,13 +230,19 @@ function syncThemeUI() {
     }
 }
 
+// 切换主题（按钮和提示文字共用）
+function toggleTheme() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    // 记住选择；用户切回过浅色后，下次打开即保持浅色
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    syncThemeUI();
+}
+
 if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const isDark = document.body.classList.toggle('dark-mode');
-        // 记住选择；用户切回过浅色后，下次打开即保持浅色
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        syncThemeUI();
-    });
+    themeToggle.addEventListener('click', toggleTheme);
+}
+if (themeHint) {
+    themeHint.addEventListener('click', toggleTheme);
 }
 
 syncThemeUI();
