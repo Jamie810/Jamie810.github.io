@@ -2369,3 +2369,37 @@ body.dark-mode .nav-link.active {
     background: rgba(59, 130, 246, 0.2);
     color: var(--primary-light);
 }
+
+/* ===== 夜间模式提示文字（手写体） ===== */
+.theme-hint {
+    margin-left: 14px;
+    font-family: Georgia, 'Times New Roman', 'Songti SC', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-light);
+    user-select: none;
+    white-space: nowrap;
+    line-height: 1;
+    align-self: center;
+    transition: color 0.3s ease;
+}
+
+.theme-hint:hover {
+    color: var(--primary-color);
+}
+
+body.dark-mode .theme-hint {
+    color: var(--text-lighter);
+}
+
+body.dark-mode .theme-hint:hover {
+    color: var(--primary-light);
+}
+
+/* 手机端隐藏提示文字，为横向滑动菜单省空间 */
+@media (max-width: 768px) {
+    .theme-hint {
+        display: none;
+    }
+}

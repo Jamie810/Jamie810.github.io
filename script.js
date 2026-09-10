@@ -215,21 +215,28 @@ if (navBrand && navMenu && window.matchMedia('(min-width: 769px)').matches) {
     });
 }
 
-// 深色模式开关
+// 深色模式开关（默认夜间模式，由 index.html 内联脚本先行写入 class）
 const themeToggle = document.getElementById('theme-toggle');
+const themeHint = document.getElementById('theme-hint');
 
-// 页面加载时恢复用户之前的选择
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    if (themeToggle) themeToggle.querySelector('i').className = 'fas fa-sun';
+// 同步按钮图标与提示文字
+function syncThemeUI() {
+    const isDark = document.body.classList.contains('dark-mode');
+    if (themeToggle) {
+        themeToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+    if (themeHint) {
+        themeHint.textContent = isDark ? 'turn on the light' : 'turn off the light';
+    }
 }
 
 if (themeToggle) {
     themeToggle.addEventListener('click', () => {
         const isDark = document.body.classList.toggle('dark-mode');
-        // 月亮 / 太阳图标互换
-        themeToggle.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-        // 记住选择，下次打开网页保持
+        // 记住选择；用户切回过浅色后，下次打开即保持浅色
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        syncThemeUI();
     });
 }
+
+syncThemeUI();
