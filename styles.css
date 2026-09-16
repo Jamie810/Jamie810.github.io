@@ -2464,3 +2464,221 @@ body.dark-mode .theme-hint:hover {
 .social-links i {
     font-size: 1.1rem;
 }
+
+/* =========================================
+   Journey Timeline
+   ========================================= */
+
+   .journey {
+    padding: 5rem 0;
+    background: var(--bg-primary);
+}
+
+.journey-wrapper {
+    width: 100%;
+    margin-top: 3.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0 1.5rem;
+    scrollbar-width: thin;
+}
+
+.journey-timeline {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    min-width: 1050px;
+    padding: 0 2rem;
+}
+
+/* Horizontal timeline */
+.journey-timeline::before {
+    content: "";
+    position: absolute;
+    top: 115px;
+    left: 2rem;
+    right: 2rem;
+    height: 2px;
+    background: var(--border-color);
+}
+
+/* Individual journey item */
+.journey-item {
+    position: relative;
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+}
+
+/* City + description */
+.journey-label {
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.journey-label h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.journey-label span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Timeline dot */
+.journey-dot {
+    position: relative;
+    z-index: 2;
+    width: 14px;
+    height: 14px;
+    margin: 20px auto 0;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 3px solid var(--bg-primary);
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+/* Vertical connector */
+.journey-dot::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    width: 1px;
+    height: 28px;
+    background: var(--border-color);
+    transform: translateX(-50%);
+}
+
+/* Image area */
+.journey-image {
+    width: 190px;
+    height: 125px;
+    margin: 40px auto 0;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-image:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.journey-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Future arrow / ending point */
+.journey-future {
+    position: relative;
+    z-index: 2;
+    min-width: 150px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.journey-future-dot {
+    width: 12px;
+    height: 12px;
+    margin-top: 22px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+}
+
+.journey-future span {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+/* Arrow at the end of the timeline */
+.journey-future::after {
+    content: "→";
+    position: absolute;
+    top: 98px;
+    right: -5px;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   Journey - Mobile
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+
+    .journey {
+        padding: 3.5rem 0;
+    }
+
+    .journey-wrapper {
+        margin-top: 2.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .journey-timeline {
+        min-width: 900px;
+        padding: 0 1.5rem;
+    }
+
+    .journey-timeline::before {
+        top: 105px;
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .journey-item {
+        min-width: 200px;
+    }
+
+    .journey-label {
+        height: 78px;
+    }
+
+    .journey-label h3 {
+        font-size: 1rem;
+    }
+
+    .journey-label span {
+        font-size: 0.72rem;
+        max-width: 170px;
+    }
+
+    .journey-dot {
+        margin-top: 20px;
+    }
+
+    .journey-image {
+        width: 165px;
+        height: 110px;
+        margin-top: 36px;
+    }
+
+    .journey-future {
+        min-width: 130px;
+    }
+
+    .journey-future span {
+        font-size: 0.75rem;
+    }
+}
