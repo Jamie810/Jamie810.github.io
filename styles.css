@@ -2450,7 +2450,7 @@ body.dark-mode .theme-hint:hover {
 .journey-timeline::before {
     content: "";
     position: absolute;
-    top: 82px;
+    top: 98px;
     left: 2%;
     right: 5%;
     height: 1px;
@@ -2476,7 +2476,7 @@ body.dark-mode .theme-hint:hover {
 
 /* City information */
 .journey-info {
-    height: 68px;
+    height: 84px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2485,15 +2485,15 @@ body.dark-mode .theme-hint:hover {
 
 .journey-info h3 {
     margin: 0;
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     font-weight: 650;
     letter-spacing: -0.01em;
     color: var(--text-color);
 }
 
 .journey-info span {
-    margin-top: 0.3rem;
-    font-size: 0.72rem;
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
     color: var(--text-light);
     line-height: 1.35;
     white-space: nowrap;
@@ -2640,9 +2640,9 @@ body.dark-mode .theme-hint:hover {
 }
 
 .journey-end span {
-    margin-top: 34px;
+    margin-top: 30px;
 
-    font-size: 0.72rem;
+    font-size: 0.9rem;
     font-style: italic;
 
     color: var(--text-light);
@@ -2657,7 +2657,7 @@ body.dark-mode .theme-hint:hover {
 
     position: absolute;
 
-    top: 68px;
+    top: 72px;
     right: -2px;
 
     font-size: 1.15rem;
@@ -2822,7 +2822,7 @@ body.dark-mode .theme-hint:hover {
     .journey-info h3 {
         margin: 0;
 
-        font-size: 0.95rem;
+        font-size: 1.15rem;
         font-weight: 650;
 
         line-height: 1.2;
@@ -2831,11 +2831,11 @@ body.dark-mode .theme-hint:hover {
     }
 
     .journey-info span {
-        margin-top: 0.25rem;
+        margin-top: 0.3rem;
 
         max-width: 125px;
 
-        font-size: 0.62rem;
+        font-size: 0.75rem;
         line-height: 1.4;
 
         color: var(--text-light);
@@ -2979,7 +2979,7 @@ body.dark-mode .theme-hint:hover {
 
         padding-left: 0.8rem;
 
-        font-size: 0.62rem;
+        font-size: 0.75rem;
 
         font-style: italic;
 
@@ -3038,12 +3038,12 @@ body.dark-mode .theme-hint:hover {
     }
 
     .journey-info h3 {
-        font-size: 0.88rem;
+        font-size: 1.02rem;
     }
 
     .journey-info span {
-        max-width: 105px;
-        font-size: 0.58rem;
+        max-width: 110px;
+        font-size: 0.7rem;
     }
 
     .journey-image {
@@ -3056,7 +3056,7 @@ body.dark-mode .theme-hint:hover {
     }
 
     .journey-end span {
-        font-size: 0.58rem;
+        font-size: 0.7rem;
         padding-left: 0.6rem;
     }
 }
