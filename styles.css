@@ -1390,6 +1390,26 @@ img {
         width: 160px;
         height: 160px;
     }
+
+    .journey-timeline {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) 72px;
+        max-width: 100%;
+        margin-top: 3.5rem;
+    }
+
+    .journey-info h3 {
+        font-size: 1.15rem;
+    }
+
+    .journey-info span {
+        font-size: 0.78rem;
+        white-space: normal;
+    }
+
+    .journey-image {
+        width: min(150px, 100%);
+        margin-top: 32px;
+    }
 }
 
 
@@ -2439,9 +2459,9 @@ body.dark-mode .theme-hint:hover {
 .journey-timeline {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 110px;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) 90px;
     align-items: start;
-    max-width: 1180px;
+    max-width: 1280px;
     margin: 5rem auto 0;
     padding: 0 0.5rem;
 }
@@ -2558,8 +2578,9 @@ body.dark-mode .theme-hint:hover {
 .journey-image {
     position: relative;
 
-    width: 210px;
-    height: 140px;
+    width: min(190px, 100%);
+    aspect-ratio: 3 / 2;
+    height: auto;
 
     margin: 42px auto 0;
 
