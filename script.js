@@ -246,3 +246,62 @@ if (themeHint) {
 }
 
 syncThemeUI();
+
+// #region agent log
+function debugLogJourneySpacing() {
+    const timeline = document.querySelector('.journey-timeline');
+    const items = Array.from(document.querySelectorAll('.journey-item'));
+    const end = document.querySelector('.journey-end');
+    if (!timeline || items.length < 2) {
+        return;
+    }
+    const timelineBox = timeline.getBoundingClientRect();
+    const itemRects = items.map((el) => {
+        const box = el.getBoundingClientRect();
+        const image = el.querySelector('.journey-image');
+        const marker = el.querySelector('.journey-marker');
+        const imageBox = image ? image.getBoundingClientRect() : null;
+        const markerBox = marker ? marker.getBoundingClientRect() : null;
+        const title = (el.querySelector('h3') || {}).textContent || '';
+        return {
+            title: title.trim(),
+            itemLeft: Math.round(box.left),
+            itemWidth: Math.round(box.width),
+            imageLeft: imageBox ? Math.round(imageBox.left) : null,
+            imageWidth: imageBox ? Math.round(imageBox.width) : null,
+            markerCenter: markerBox ? Math.round(markerBox.left + markerBox.width / 2) : null
+        };
+    });
+    const imageGaps = [];
+    const markerGaps = [];
+    const itemGaps = [];
+    for (let i = 1; i < itemRects.length; i += 1) {
+        const prev = itemRects[i - 1];
+        const curr = itemRects[i];
+        itemGaps.push({
+            from: prev.title,
+            to: curr.title,
+            gap: curr.itemLeft - (prev.itemLeft + prev.itemWidth)
+        });
+        if (prev.imageLeft != null && curr.imageLeft != null && prev.imageWidth != null) {
+            imageGaps.push({
+                from: prev.title,
+                to: curr.title,
+                gap: curr.imageLeft - (prev.imageLeft + prev.imageWidth)
+            });
+        }
+        if (prev.markerCenter != null && curr.markerCenter != null) {
+            markerGaps.push({
+                from: prev.title,
+                to: curr.title,
+                gap: curr.markerCenter - prev.markerCenter
+            });
+        }
+    }
+    const endBox = end ? end.getBoundingClientRect() : null;
+    const last = itemRects[itemRects.length - 1];
+    fetch('http://127.0.0.1:7467/ingest/05f77225-4cb9-463b-a6b5-b4827e19ee80',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'d57853'},body:JSON.stringify({sessionId:'d57853',runId:'post-fix',hypothesisId:'A-E',location:'script.js:debugLogJourneySpacing',message:'journey spacing',data:{vw:window.innerWidth,isMobile:window.innerWidth<=768,gridTemplateColumns:getComputedStyle(timeline).gridTemplateColumns,timelineWidth:Math.round(timelineBox.width),itemRects,itemGaps,imageGaps,markerGaps,endLeft:endBox?Math.round(endBox.left):null,endWidth:endBox?Math.round(endBox.width):null,copenhagenToEnd:endBox&&last?Math.round(endBox.left-(last.itemLeft+last.itemWidth)):null,lastImageToEnd:endBox&&last&&last.imageLeft!=null?Math.round(endBox.left-(last.imageLeft+last.imageWidth)):null},timestamp:Date.now()})}).catch(()=>{});
+}
+window.addEventListener('load', debugLogJourneySpacing);
+window.addEventListener('resize', debugLogJourneySpacing);
+// #endregion

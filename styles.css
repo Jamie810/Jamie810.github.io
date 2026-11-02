@@ -1392,7 +1392,7 @@ img {
     }
 
     .journey-timeline {
-        grid-template-columns: repeat(5, minmax(0, 1fr)) 72px;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
         max-width: 100%;
         margin-top: 3.5rem;
     }
@@ -2459,20 +2459,22 @@ body.dark-mode .theme-hint:hover {
 .journey-timeline {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) 90px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    justify-items: center;
     align-items: start;
+    width: 100%;
     max-width: 1280px;
     margin: 5rem auto 0;
     padding: 0 0.5rem;
 }
 
-/* Main horizontal axis */
+/* Main horizontal axis: first marker to last marker (6 equal columns) */
 .journey-timeline::before {
     content: "";
     position: absolute;
     top: 98px;
-    left: 2%;
-    right: 5%;
+    left: calc(100% / 12);
+    right: calc(100% / 12);
     height: 1px;
     background: linear-gradient(
         90deg,
@@ -2638,6 +2640,8 @@ body.dark-mode .theme-hint:hover {
 
 .journey-end {
     position: relative;
+    min-width: 0;
+    width: 100%;
     height: 190px;
 
     display: flex;
